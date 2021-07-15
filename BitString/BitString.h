@@ -86,7 +86,8 @@ inline MyString& MyString::operator=(const MyString& obj)
 		delete[]this->str;
 	}
 
-	this->length = strlen(obj.str);
+	//this->length = strlen(obj.str);
+	this->length = obj.length;
 	this->str = new char[length + 1];
 	strcpy(this->str, obj.str);
 
@@ -223,6 +224,8 @@ public:
 	//8) сложение битовых строк(перегрузить операторы + и += );
 
 	BitString operator+(const BitString& obj);
+
+	BitString operator+=(const BitString& obj);
 
 	//long long int dec2bin(int a); // ф-кция перевода числа из 10 в 2 систему
 
@@ -484,6 +487,17 @@ inline BitString BitString::operator+(const BitString& obj)
 	}
 
 	return BitString(buff);
+}
+
+inline BitString BitString::operator+=(const BitString& obj)
+{
+	BitString tmp;
+
+	tmp = *this + obj;
+
+	*this = tmp;
+
+	return *this;
 }
 
 BitString::~BitString()

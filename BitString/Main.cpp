@@ -11,7 +11,7 @@ int main()
 	cout.imbue(loc);
 
 	BitString b;
-	BitString c = "1011";
+	BitString c = "111";
 
 	BitString error = "4545";
 
@@ -28,7 +28,7 @@ int main()
 	char buf[80];
 	b = _itoa(a, buf, 2);*/
 
-	b = "1011111"; 
+	b = "100"; 
 	b.checkBit();
 	c.checkBit();
 	error.checkBit();
@@ -36,11 +36,22 @@ int main()
 	cout << "BitString b = " << b;
 	cout << "BitString c = " << c;
 
-	cout << "BitString error = " << error;
+	cout << "BitString error = 4545 - " << error;
 	cout << endl;
 	error = b + c;
 
-	cout << "BitString error = " << error;
+	cout << "error = b + c " << error;
+	cout << endl;
+
+	bool k = b == c;
+	cout << "bool k = b == c: " << k << endl;
+
+	k = b != c;
+	cout << "bool k = b != c: " << k << endl;
+
+	b += error;
+
+	cout << "b += error: " << b;
 
 	cout << endl;
 	system("pause");
