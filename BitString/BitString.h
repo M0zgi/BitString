@@ -279,13 +279,6 @@ inline void BitString::checkBit()
 
 inline BitString BitString::operator+(const BitString& obj)
 {
-	/*int size;
-	
-	if (length > obj.length)
-		size = length;
-	else
-		size = obj.length;*/
-
 	int dop = 0;
 
 	char *buff = new char [length + obj.length];
@@ -294,8 +287,6 @@ inline BitString BitString::operator+(const BitString& obj)
 
 	if (length > obj.length || length == obj.length)
 	{
-		//size = length - obj.length;
-
 		for (; i < obj.length + 1; i++)
 		{
 			if (this->str[length - i] == '0' && obj.str[obj.length - i] == '0')
