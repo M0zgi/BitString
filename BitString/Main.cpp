@@ -40,7 +40,7 @@ int main()
 	cout << endl;
 	error = b + c;
 
-	cout << "error = b + c " << error;
+	cout << "error = b + c = " << error;
 	cout << endl;
 
 	bool k = b == c;
