@@ -491,11 +491,13 @@ inline BitString BitString::operator+(const BitString& obj)
 
 inline BitString BitString::operator+=(const BitString& obj)
 {
-	BitString tmp;
+	//BitString tmp;
 
-	tmp = *this + obj;
+	//tmp = *this + obj;
 
-	*this = tmp;
+	//*this = tmp;
+
+	*this = *this + obj;
 
 	return *this;
 }
